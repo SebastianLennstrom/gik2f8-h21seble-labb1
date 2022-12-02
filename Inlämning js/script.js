@@ -30,29 +30,39 @@ function renderBookList(bookList) {
 }
 
 
-
-
+ 
   function showItem(bookList) {
+  
   for (let i = 0; i < bookList.length; i++) {
     let li = bookList[i];
-    let html = `<div id="hidden-Item" style = border: 1px solid black; border-radius: 10px; z-index: 100; background-color:white;
-    position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 40%> 
-        <header style = padding: 10px 15px; display: flex; justify-content: space-between; align-items: center >
-        ${li.title}
-        <button id="close-btn">&times;</button>
-        </header>
-        <p>
-        This is info about the book
-        </p>
-    </div>` 
-    return html 
+    let html = `  <div id="hidden-Item" style =visability:visible;background-color:white;border-radius:10px;z-index:100;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);max-width:40%> 
+    <header style = padding:10px,15px;display:flex;align-items:center;justify-content:center;transition:200msease-in-out>
+    ${li.title}
+    </header>
+    <p style = padding:1rem>
+    This is info about the book
+    </p>
+</div>` 
+    i++
+    return html
   }
+  
 }
 
-let listItem = document.getElementsByClassName(".book-list_item")
-listItem = document.addEventListener('click', () =>{
-      
-       root.insertAdjacentHTML('beforeend', showItem(bookList))
-       console.log("clicked")
+for (let i = 0; i < bookList.length; i++) {
+  const listItem = bookList[i];
+  listItem[i].addEventListener("click", () => {
+    root.insertAdjacentHTML("beforeend", showItem(bookList))
   })
+}
+
+/*let listItem = document.querySelectorAll(".book-list__item");
+
+listItem = document.addEventListener("click", () =>{
+      root.insertAdjacentHTML('beforeend', showItem(bookList))
+})*/
+
+
+
+
 
