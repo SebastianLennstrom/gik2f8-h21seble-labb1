@@ -51,6 +51,7 @@ function renderBookList(bookList) {
 
 let listItem = document.getElementsByClassName(".book-list_item")
 listItem = document.addEventListener('click', () =>{
+      
        root.insertAdjacentHTML('beforeend', showItem(bookList))
        console.log("clicked")
   })
