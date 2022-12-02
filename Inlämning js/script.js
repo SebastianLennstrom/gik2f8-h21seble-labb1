@@ -6,6 +6,8 @@ window.addEventListener('load', () => {
   getAll().then((apiBooks) => (bookList = apiBooks));
 });
 
+
+
 searchField.addEventListener('keyup', (e) =>
   renderBookList(
     bookList.filter(({ title, author }) => {
@@ -28,16 +30,28 @@ function renderBookList(bookList) {
 }
 
 
-listItem =
-function showHiddenInfo(bookList){
+
+
+  function showItem(bookList) {
   for (let i = 0; i < bookList.length; i++) {
-    bookList[i] = document.addEventListener('mouseenter', () =>{
-        console.log("mouse enters")
-
-      
-    })
-
-    
+    let li = bookList[i];
+    let html = `<div id="hidden-Item" style = border: 1px solid black; border-radius: 10px; z-index: 100; background-color:white;
+    position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 40%> 
+        <header style = padding: 10px 15px; display: flex; justify-content: space-between; align-items: center >
+        ${li.title}
+        <button id="close-btn">&times;</button>
+        </header>
+        <p>
+        This is info about the book
+        </p>
+    </div>` 
+    return html 
   }
 }
-showHiddenInfo(bookList)
+
+let listItem = document.getElementsByClassName(".book-list_item")
+listItem = document.addEventListener('click', () =>{
+       root.insertAdjacentHTML('beforeend', showItem(bookList))
+       console.log("clicked")
+  })
+
