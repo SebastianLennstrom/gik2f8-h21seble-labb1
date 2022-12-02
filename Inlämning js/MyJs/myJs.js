@@ -1,29 +1,17 @@
-/*const target = (BookListItem) => {
-    BookLis
-    const html = `
-    <div> 
-        <header>
-        Title of book
-        </header>
-        <p>
-        This is information about the book
-        </p>
-  </div>
-    `
+const createHidden = (book) =>{
+ let html =    `
+<div id="hidden-Item" style = border: 1px solid black; border-radius: 10px; z-index: 10; background-color:white;
+position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 40%> 
+    <header style = padding: 10px 15px; display: flex; justify-content: space-between; align-items: center >
+    ${book.title}
+    <button id="close-btn">&times;</button>
+    </header>
+    <p>
+    This is info about the book
+    </p>
+</div>`
+return html
+}
 
-    return html
-
-
- 
-}*/
-
-/*const hiddenItem = (book) => {
-    let html = `<li
-                  class="book-list__item mb-2 mx-2 last:mb-0 p-3 text-indigo-900 last:border-b-0 border-b border-indigo-700 cursor-pointer">
-                ${book.author} - ${book.title}    
-                </li>`;
-    return html;
-  };*/
 
  
-
