@@ -27,3 +27,17 @@ function renderBookList(bookList) {
   bookList.length > 0 && searchField.value && root.insertAdjacentHTML('beforeend', BookList(bookList));
 }
 
+
+listItem =
+function showHiddenInfo(bookList){
+  for (let i = 0; i < bookList.length; i++) {
+    bookList[i] = document.addEventListener('mouseenter', () =>{
+        console.log("mouse enters")
+
+      
+    })
+
+    
+  }
+}
+showHiddenInfo(bookList)
