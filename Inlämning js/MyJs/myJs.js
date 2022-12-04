@@ -1,16 +1,12 @@
-const createHidden = () =>{
- let html =    `
-<div id="hidden-Item" style = border: 1px solid black; border-radius: 10px; z-index: 10; background-color:white;
-position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: 40%> 
-    <header style = padding: 10px 15px; display: flex; justify-content: space-between; align-items: center >
-    <button id="close-btn">&times;</button>
-    </header>
-    <p>
-    This is info about the book
-    </p>
-</div>`
-return html
-}
-
+const BookListInfo = (book) => {
+    let html = `  <div id="hidden-Item" style =visability:visible;background-color:white;border-radius:10px;z-index:100;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);max-width:40%> 
+      <header style = padding:10px,15px;display:flex;align-items:center;justify-content:center;transition:200msease-in-out>
+      ${book.title} </header>
+      <div style = padding:1rem>
+      ${book.coverImage} 
+      </div>
+    </div>`;
+  return html;
+  }
 
  
