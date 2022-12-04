@@ -4,6 +4,7 @@ let bookList = [];
 
 window.addEventListener('load', () => {
   getAll().then((apiBooks) => (bookList = apiBooks));
+
 });
 
 
@@ -41,14 +42,14 @@ const createPopupWindow = () => {
   This is info about the book
   </p>
 </div>` 
-
-let create = root.insertAdjacentHTML("afterend", html)
+const root = getElementById("root")
+const create = root.insertAdjacentHTML("afterend", html)
   return create
 }
  
-const hoverParent = document.querySelectorAll(".book-list")
+
 const hoverTarget = document.querySelectorAll(".book-list__item")
-  hoverParent.forEach(hoverTarget => {
+  hoverTarget.forEach(hoverTarget => {
     hoverTarget.addEventListener("mouseenter", () => {
       createPopupWindow
       console.log("hovered")
