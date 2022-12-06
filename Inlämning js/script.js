@@ -33,14 +33,15 @@ function renderBookList(bookList) {
       root.insertAdjacentHTML("beforeend", BookListInfo(getBookId(i.getAttribute("id"))));
       console.log(i)
     i.addEventListener("mouseleave", () =>{
-      const removePopUp = document.querySelector(".book-list__info")
-      removePopUp.remove();
+      document.querySelector(".book-list__info").remove();
     })
   })
 } )  
 
 
 }
+
+
 
 function getBookId(id){
   for (let i = 0; i < bookList.length; i++) {
@@ -50,6 +51,8 @@ function getBookId(id){
     }
   }
 }
+
+
 
 
 /*
