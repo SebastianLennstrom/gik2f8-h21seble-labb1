@@ -4,9 +4,8 @@ let bookList = [];
 
 window.addEventListener('load', () => {
   getAll().then((apiBooks) => (bookList = apiBooks));
-
+  
 });
-
 
 
 searchField.addEventListener('keyup', (e) =>
@@ -28,18 +27,42 @@ function renderBookList(bookList) {
 
   existingElement && root.removeChild(existingElement);
   bookList.length > 0 && searchField.value && root.insertAdjacentHTML('beforeend', BookList(bookList));
+  let book = document.querySelectorAll(".book-list__item");
+  book.forEach(i => {
+    i.addEventListener("mouseenter", () => {
+      root.insertAdjacentHTML("beforeend", BookListInfo(getBookId(i.getAttribute("id"))));
+      console.log(i)
+    i.addEventListener("mouseleave", () =>{
+      const removePopUp = document.querySelector(".book-list__info")
+      removePopUp.remove();
+    })
+  })
+} )  
+
+
+}
+
+function getBookId(id){
+  for (let i = 0; i < bookList.length; i++) {
+    if(bookList[i].id == id){
+    console.log(i)
+    return bookList[i]
+    }
+  }
 }
 
 
-
-
-/*const existingElement = document.querySelector('.book-list');
+/*
+function renderBookInfo(bookList) {
+  const existingElement = document.querySelector('.book-list__info');
 
   const root = document.getElementById('root');
 
   existingElement && root.removeChild(existingElement);
-  bookList.length > 0 && searchField.value && root.insertAdjacentHTML('beforeend', BookList(bookList));
+  bookList.length > root.insertAdjacentHTML('beforeend', BookListInfo(bookList));
 }*/
+
+
 
 
 
