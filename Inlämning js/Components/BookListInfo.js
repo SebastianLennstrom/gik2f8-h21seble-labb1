@@ -1,5 +1,5 @@
 const BookListInfo = (book) => {
-    let html = `  <div id = "book-list__info" class= "book-list__info absolute pointer-events-none" style= background-color:white;border-radius:15px;z-index:10;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%)> 
+    let html = `  <div id = "book-list__info" class= " shadow-md book-list__info absolute pointer-events-none" style= background-color:white;border-radius:15px;z-index:10;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%)> 
       <header style = padding:10px,15px;display:flex;align-items:center;justify-content:center>
       ${book.title} <br> ${book.author} </header>
       <picture>
