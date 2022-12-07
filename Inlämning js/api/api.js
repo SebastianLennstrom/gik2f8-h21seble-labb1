@@ -16,6 +16,5 @@ async function getApiBook(id){
   .catch((e) => e);
 
   root.insertAdjacentHTML("afterend", BookListInfo(result));
-//return result;
 
 }
