@@ -9,3 +9,13 @@ async function getAll() {
 }
 
 
+async function getApiBook(id){
+  const root = document.getElementById("root")
+  const result = await fetch(url + "/" + id)
+  .then((result) => result.json())
+  .catch((e) => e);
+
+  root.insertAdjacentHTML("afterend", BookListInfo(result));
+//return result;
+
+}

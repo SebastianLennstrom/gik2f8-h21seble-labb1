@@ -30,13 +30,15 @@ function renderBookList(bookList) {
   let book = document.querySelectorAll(".book-list__item");
   book.forEach(i => {
     i.addEventListener("mouseenter", () => {
-      root.insertAdjacentHTML("beforeend", BookListInfo(getBookId(i.getAttribute("id"))));
-      console.log(i)
-    i.addEventListener("mouseleave", () =>{
-      document.querySelector(".book-list__info").remove() ;
+      //root.insertAdjacentHTML("beforeend", BookListInfo(getApiBook(i.getAttribute("id"))));
+      getApiBook(i.getAttribute("id")).then(book => root.insertAdjacentHTML("beforeend", BookListInfo(book)));
+
+      i.addEventListener("mouseleave", () => {
+        document.getElementById("book-list__info").remove();
     })
   })
-} )  
+}) 
+;
 
 
 }
@@ -53,15 +55,6 @@ function getBookId(id){
 
 
 
-/*
-function renderBookInfo(bookList) {
-  const existingElement = document.querySelector('.book-list__info');
-
-  const root = document.getElementById('root');
-
-  existingElement && root.removeChild(existingElement);
-  bookList.length > root.insertAdjacentHTML('beforeend', BookListInfo(bookList));
-}*/
 
 
 
