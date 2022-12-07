@@ -30,13 +30,12 @@ function renderBookList(bookList) {
   let book = document.querySelectorAll(".book-list__item");
   book.forEach(i => {
     i.addEventListener("mouseenter", () => {
-      //root.insertAdjacentHTML("beforeend", BookListInfo(getApiBook(i.getAttribute("id"))));
       getApiBook(i.getAttribute("id")).then(book => root.insertAdjacentHTML("beforeend", BookListInfo(book)));
-
       i.addEventListener("mouseleave", () => {
         document.getElementById("book-list__info").remove();
-    })
   })
+})
+
 }) 
 ;
 
